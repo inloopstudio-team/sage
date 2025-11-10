@@ -13,7 +13,7 @@ module Sage
         # Page 3: Even older messages, etc.
 
         base_query = @query.messages.order(created_at: :desc)
-        @pagy, messages = pagy(base_query, page: page, overflow: :last_page)
+        @pagy, messages = pagy(base_query, page: page, limit: params[:limit] || 20, overflow: :last_page)
 
         # For page 1 (initial load), show newest messages in chronological order (oldest first)
         # For page 2+, keep reverse chronological order for prepending

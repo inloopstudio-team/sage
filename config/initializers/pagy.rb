@@ -1,2 +1,1 @@
-Pagy::DEFAULT[:items] = 10
-Pagy::DEFAULT[:overflow] = :last_page
+Pagy::DEFAULT = Pagy::DEFAULT.merge(limit: 10, overflow: :last_page)
